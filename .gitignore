@@ -1,0 +1,9 @@
+.DS_Store
+__MAXOSX/
+.ipynb_checkpoints/
+.vscode/
+__pycache__/
+
+*.h5
+/checkpoints/
+/tensorboard/
