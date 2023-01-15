@@ -20,7 +20,7 @@ def make_hdf5_files(dataset_dir: str, hdf5_dir: str) -> None:
             if likelihood > 99 and scp_code in scp_codes_of_interest:
                 scp_to_df_idx[scp_code].append(i)
     for scp_code, df_indices in scp_to_df_idx.items():
-        hdf5_path = str(hdf5_dir / f'ptb_xl_{scp_code}.h5')
+        hdf5_path = str(hdf5_dir / f'ptb_xl_hr_{scp_code}.h5')
         hdf5_file = h5py.File(hdf5_path, 'w')
         id_dataset = hdf5_file.create_dataset('id', shape=(len(df_indices),), dtype='int16')
         signal_dataset = hdf5_file.create_dataset('signal', shape=(len(df_indices), 12, 5000), dtype='float16')
